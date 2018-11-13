@@ -67,7 +67,7 @@
     "ionic": "3.19.0",
     "typescript": "2.3.4"
   },
-  "description": "MMS - Montessory School System",
+  "description": "MMS-Montessory School System",
   "cordovaPlugins": [],
   "cordovaPlatforms": [],
   "cordova": {
