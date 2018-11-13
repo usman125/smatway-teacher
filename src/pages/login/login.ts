@@ -58,22 +58,30 @@ export class LoginPage {
         this.loggedUser = result.user
         if (this.loggedUser.roleId === parseInt('3')){
           this.loggedUser.role = 'teacher'
+          this.loggedUser.schoolId = this.loggedUser.teacher.schoolId
+          this._storage.set('user', JSON.stringify(this.loggedUser))
+          console.log("RESULT FROM LOGIN:---\n", this.loggedUser, 
+                      this._storage.get('user').then((val) => {
+                        console.log('Your STOREAGE ITEM IS:---\n', JSON.parse(val));
+                      }))
+          this.nav.setRoot(SelectClass)
+          this.Events.publish('user:created', this.loggedUser, Date.now());
+          const toast = this.toastCtrl.create({
+            message: 'Your were successfully Logged In',
+            // showCloseButton: true,
+            // closeButtonText: 'Ok',
+            duration: 3000
+          });
+          toast.present();
+        }else{
+          const toast = this.toastCtrl.create({
+            message: 'Username or Password Incorrect..',
+            // showCloseButton: true,
+            // closeButtonText: 'Ok',
+            duration: 3000
+          });
+          toast.present();
         }
-        this.loggedUser.schoolId = this.loggedUser.teacher.schoolId
-        this._storage.set('user', JSON.stringify(this.loggedUser))
-        console.log("RESULT FROM LOGIN:---\n", this.loggedUser, 
-                    this._storage.get('user').then((val) => {
-                      console.log('Your STOREAGE ITEM IS:---\n', JSON.parse(val));
-                    }))
-        this.nav.setRoot(SelectClass)
-        this.Events.publish('user:created', this.loggedUser, Date.now());
-        const toast = this.toastCtrl.create({
-          message: 'Your were successfully Logged In',
-          // showCloseButton: true,
-          // closeButtonText: 'Ok',
-          duration: 3000
-        });
-        toast.present();
       }else{
         const toast = this.toastCtrl.create({
           message: `${result.message}`,
