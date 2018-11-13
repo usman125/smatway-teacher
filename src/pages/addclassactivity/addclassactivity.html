@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Class Activity</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="animated fadeIn common-bg">
+
+  <ion-card>
+    <ion-item>
+      <!-- <p>{{imageURI}}</p> -->
+      <button ion-button color="secondary" (click)="presentImageUploadSheet()">Get Image</button>
+    </ion-item>
+
+    <ion-item>
+      <h4>Image Preview</h4>
+      <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File1" width="300" />
+      <!-- <img src="{{imageURI}}" *ngIf="imageURI" alt="Ionic File1" width="300" /> -->
+      <!-- <img src="{{previewImage}}" *ngIf="previewImage" alt="Ionic File1" width="300" /> -->
+      <img [src]="domSanitizer.bypassSecurityTrustUrl(previewImage)" *ngIf="previewImage" alt="Ionic File2" width="300" />
+      <!-- <div *ngIf="!imageFileName">{{previewImage}}</div> -->
+    </ion-item>
+
+    <ion-item>
+      <h4>Image Caption</h4>
+      <ion-input [(ngModel)]="imageCaption" placeholder="Image Caption"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button [disabled]="!imageURI" ion-button (click)="uploadFile()">Upload Image</button>
+    </ion-item>
+  
+  </ion-card>
+
+  <ion-card>
+    
+    <ion-item class="col">
+      <!-- <p>{{videoId}}</p> -->
+      <button ion-button color="secondary" (click)="presentVideoUploadSheet()">Browse Video</button>
+    </ion-item>
+    
+    <ion-item class="col">
+      <button class="m-l-15" ion-button color="secondary" (click)="playVideo()" [disabled]="flag_play">Play Video</button>
+      <!-- <video #myvideo height="300" width="300" controls></video> -->
+    </ion-item>
+    
+    <ion-item>
+      <h4>Video Caption</h4>
+      <ion-input [(ngModel)]="videoCaption" placeholder="Video Caption"></ion-input>
+    </ion-item>
+    
+    
+    <ion-item>
+      <button [disabled]="!videoId" ion-button (click)="uploadVideo()">Upload Video</button>
+    </ion-item>
+  
+  </ion-card>
+
+
+</ion-content>

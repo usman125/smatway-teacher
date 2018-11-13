@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Class Assignments</ion-title>
+    <ion-buttons end>
+      <button ion-button tappable class="addbtn" (click)="addModel()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="animated fadeIn common-bg">
+  <ion-card *ngFor="let item of allAssigns" (click)="getAssignment(item)" tappable>
+    <ion-list>
+<!--       <ion-list-header>
+        <h2 class="header-title">Students</h2>
+      </ion-list-header>
+      <div class="notes" padding *ngIf="disableBtn">
+        <small>*Today's Atendance marked!!</small>
+      </div> -->
+<!--       <ion-item *ngFor="let student of allStudents;">
+        <ion-label>{{student?.name}}</ion-label>
+        <ion-toggle value="foo" [(ngModel)]="student.isPresent" disabled="{{student.disabled}}" checked="{{student.isPresent}}"></ion-toggle>
+      </ion-item>
+      <button [disabled]="disableBtn" padding ion-button block color="secondary" (click)="submitAttendance()" tappable>Submit</button> -->
+      <ion-item>
+        <div class="header-title">
+          <span>{{item.title}}</span>
+        </div>
+        <div class="datenote m-t-10">
+          <ion-note item-end>
+            <span>{{item.submissionDate | date:'fullDate'}}</span>
+          </ion-note>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

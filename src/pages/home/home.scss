@@ -1,0 +1,39 @@
+page-home,
+.home {
+  ion-list {
+    border-radius: 1rem;
+    overflow: hidden;
+
+    ion-item,
+    .item:first-child,
+    .item:last-child {
+      border: none;
+    }
+
+    ion-datetime {
+      padding-left: 0;
+    }
+
+  }
+  .home-icon{
+    font-size: 55px;
+    padding: 3px 5px;
+  }
+
+
+  .m-l-20{
+    margin-left: 20px !important;
+  }
+  .notes{
+    text-align: left;
+    margin-top: 10px;
+    color: #FEC201;
+    font-size: 14px;
+  }
+
+  .tabs-md .has-icon .tab-button-text {
+    // margin-top: 4px;
+    // margin-bottom: 0;
+    font-size: 8px;
+  }
+}

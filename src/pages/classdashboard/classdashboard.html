@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{selectedClass?.name}} Details
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+  <!-- <ion-card (click)="goToStudents()" tappable> -->
+  <ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon" color="light" name='school'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title">Students</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Recorded <br> <p id="box-number">{{classStudents?.length}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+  <!-- <ion-card (click)="goToClassAttendance()" tappable> -->
+  <ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon" color="light" name='clock'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title">Class attendance</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Present <br> <p id="box-number">{{presentCount}}</p> </span>
+            <span class="text-primary">Absent <br> <p id="box-number">{{absentCount}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="notes">
+        <small>*Today's Count</small>
+      </div>
+
+    </ion-item>
+  </ion-card>
+
+  <!-- <ion-card (click)="goToAssignments()" tappable> -->
+  <ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon" color="light" ios="ios-folder" md="md-folder"></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title">Assignments</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Recorded <br> <p id="box-number">{{assignmentsCount}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+
+  <!-- <ion-card (click)="goToPlanner()" tappable> -->
+  <ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon" color="light" name='calendar'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title">Planner</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Events <br> <p id="box-number">250</p> </span>
+            <span class="text-primary">Classes <br> <p id="box-number">250</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+  <!-- <ion-card (click)="goToTeacherAttendance()" tappable> -->
+  <ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon" color="light" name='clock'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title">my attendance</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Present <br> <p id="box-number">{{presentTeacherCount}}</p> </span>
+            <span class="text-primary">Absent <br> <p id="box-number">{{absentTeacherCount}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="notes">
+        <small>*This Month's Count</small>
+      </div>
+    </ion-item>
+  </ion-card>
+</ion-content>

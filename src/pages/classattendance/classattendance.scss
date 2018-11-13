@@ -1,0 +1,128 @@
+class-attendance,
+.common-bg{
+  .user-dummy{
+    ion-icon {
+      font-size: 45px;
+      color: #cecece;
+      margin-top: 6px;
+    }
+  } 
+
+  .user-avatar{
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-top: 6px;
+    }
+  } 
+  .user-title{
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  .user-info{
+    font-size: 13px;
+    ion-icon {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  } 
+
+  .pull-right{
+    float: right;
+  }
+
+  .m-rt-10{
+    margin-right: 10px !important;
+  }
+  
+  .m-lt-10{
+    margin-left: 10px !important;
+  }
+
+  .m-t-10{
+    margin-top: 10px !important;
+
+  } 
+  .m-b-10{
+    margin-bottom: 10px !important;
+
+  }
+
+  .m-lt-15{
+    margin-left: 15px !important;
+  }
+
+  .m-rt-15{
+    margin-right: 15px !important;
+  }
+
+
+  .m-t-15{
+    margin-top: 15px !important;
+
+  } 
+  .m-b-15{
+    margin-bottom: 15px !important;
+
+  }
+
+
+
+  // .header-title-alt{
+  //   padding: 0px !important;
+  // }
+
+  // .notes{
+  //   margin-left: 15px !important;
+  //   margin-bottom: 15px !important;
+  // }
+}
+
+.list-header-md{
+  margin-bottom: 0px !important;
+  border-top: none;
+}
+
+.card-md ion-list {
+    // margin-bottom: 0;
+    padding: 8px;
+}
+
+// .item-toggle-disabled .item-inner .input-wrapper ion-label, 
+// .item-toggle-disabled ion-toggle {
+//     opacity: 1 !important;
+// }
+
+.item-toggle-disabled .item-inner .input-wrapper ion-label {
+    opacity: 1 !important;
+}
+
+.toggle.toggle-md.toggle-disabled.toggle-checked {
+    opacity: 1;
+}
+
+.toggle.toggle-md.toggle-disabled.toggle-checked .toggle-icon {
+    background-color: #7bed9f;
+}
+
+.toggle.toggle-md.toggle-disabled.toggle-checked .toggle-inner {
+    // opacity: 1;
+    background-color: #2ECC40;
+}
+
+.toggle.toggle-md.toggle-disabled {
+    opacity: 1;
+}
+
+.toggle.toggle-md.toggle-disabled .toggle-inner {
+    // opacity: 1;
+    background-color: #d63031;
+}
+
+.toggle.toggle-md.toggle-disabled .toggle-icon {
+    background-color: #ff7675;
+}

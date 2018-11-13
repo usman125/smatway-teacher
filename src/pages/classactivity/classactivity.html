@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <!-- <ion-title>{{selectedStudent?.name}}</ion-title> -->
+    <ion-title>Class Activities</ion-title>
+    <ion-buttons end>
+      <button ion-button tappable class="addbtn" (click)="addActivity()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="animated fadeIn common-bg">
+
+  <div *ngFor="let activity of allActivites">
+    
+    <ion-card *ngIf="activity?.type === 'video'">
+      <ion-item>
+        <video controls="controls" height="300" width="300" class="videoPlayer">
+          <source src="{{activity.url}}" type="video/mp4" />
+        </video>
+      </ion-item>
+    </ion-card>
+
+    <ion-card *ngIf="activity?.type === 'image'">
+      <ion-item>
+        <img src="{{activity.url}}" width="300">
+      </ion-item>
+      <ion-item>
+        <h5>{{activity.caption}}</h5>
+      </ion-item>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

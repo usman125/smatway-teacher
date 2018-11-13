@@ -1,0 +1,37 @@
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" [formGroup]="loginForm" (ngSubmit)="checkLogin(loginForm.value)">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input formControlName="username" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon item-start class="text-primary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+
+      <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
+      <div>
+        <button ion-button icon-start block color="dark" tappable type="submit">
+          <ion-icon name="log-in"></ion-icon>
+          SIGN IN
+        </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

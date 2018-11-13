@@ -1,0 +1,85 @@
+<!-- <ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{selectedStudent?.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding class="animated fadeIn common-bg">
+
+
+<!--   <ion-card (click)="goToPerformance()" tappable>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" ios="ios-star" md="md-star"></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">performance</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">current evaluation <br> 
+             <p id="box-number">
+               
+              <ion-icon range-left name='star'></ion-icon>
+              <ion-icon range-left name='star'></ion-icon>
+              <ion-icon range-left name='star'></ion-icon>
+              <ion-icon range-left name='star-half'></ion-icon>
+              <ion-icon range-left name='star-outline'></ion-icon>
+             </p> 
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" name='clock'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">attendance</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">present <br> <p id="box-number">{{presentCount}}</p> </span>
+            <span class="text-primary">absent <br> <p id="box-number">{{absentCount}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="notes">
+        <small>*Month's Count</small>
+      </div>
+
+    </ion-item>
+  </ion-card>
+
+  <ion-card (click)="goToActivity()" tappable>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" ios="ios-cloud-upload" md="md-cloud-upload"></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">Upload activity</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">recorded <br> <p id="box-number">{{activitiesCount}}</p> </span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-item>
+  </ion-card> -->
+
+  <ion-tabs tabsPlacement="top" tabsHighlight="true">
+    <!-- <ion-tab tabIcon="people" tabTitle="Students"></ion-tab> -->
+    <ion-tab tabTitle="Performance" [root]="tab1" [rootParams]="rootParams"></ion-tab>
+    <ion-tab tabTitle="Activities" [root]="tab2" [rootParams]="rootParams"></ion-tab>
+    <ion-tab tabTitle="Assignments" [root]="tab3" [rootParams]="rootParams"></ion-tab>
+  </ion-tabs>
+
+</ion-content>

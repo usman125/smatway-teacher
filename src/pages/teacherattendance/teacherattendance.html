@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+<!--     <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>My Attendance</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="common-bg">
+  <ion-card>
+    <ion-list *ngIf="allStudents">
+      <ion-list-header>
+        <h2 class="header-title">Today Attendance</h2>
+      </ion-list-header>
+      <div class="notes" padding *ngIf="disableBtn">
+        <small>*Today's Atendance marked!!</small>
+      </div>
+      <ion-item>
+        <ion-label>{{todayDate | date:'fullDate'}}</ion-label>
+        <ion-toggle value="foo" disabled="{{isDisable}}" [(ngModel)]="isPresent" checked="{{isPresent}}"></ion-toggle>
+      </ion-item>
+      <button [disabled]="disableBtn" ion-button block color="secondary" (click)="submitAttendance()" tappable>Submit</button>
+    </ion-list>
+
+  <!-- <input ion-input name="file" type="file" /> -->
+  </ion-card>
+  <ion-card>
+    <ion-list *ngIf="allStudents">
+      <ion-list-header>
+        <h2 class="header-title">Previous Attendances</h2>
+      </ion-list-header>
+      <ion-item *ngFor="let obj of allAttendances">
+        <ion-label>{{obj.dateCreated | date:'fullDate'}}</ion-label>
+        <ion-toggle value="foo" disabled="true" checked="{{obj.isPresent}}"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+<!--   <ng-template #template let-view="view" let-row="row" let-col="col">
+    <div class={{getEventClass(view.dates[row*7+col].events)}} id={{getEventId(view.dates[row*7+col].label)}}>{{view.dates[row*7+col].label}}</div>
+  </ng-template>
+
+    <calendar 
+    [monthviewDisplayEventTemplate]="template"
+    [eventSource]="eventSource" [markDisabled]="markDisabled" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate"
+     (onCurrentDateChanged)="onCurrentDateChanged($event)" (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)"
+     (onTimeSelected)="onTimeSelected($event)" [formatDayTitle]="'MMM dd, yyyy'" [formatMonthTitle]="'MMMM yyyy'" 
+     [formatWeekTitle]="'MMMM, w'" step="20">
+    </calendar> -->
+
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Assignment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-label fixed>Title</ion-label>
+      <ion-input type="text" value='assignmentTitle' [(ngModel)]='assignmentTitle'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Submit Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="assignmentDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label class="text-1x bold">Send to</ion-label>
+      <ion-select [(ngModel)]="selectedStudent" (ionChange)="sendAssignTo($event)">
+        <ion-option value="all">All Students</ion-option>
+        <ion-option *ngFor="let item of allStudents" [value]="item.id">{{ item.name }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <button ion-button block color="secondary" (click)="submitAssignment()" tappable>Submit</button>
+    </ion-item>
+
+  </ion-card>
+
+<!--   <ion-card>
+    <p>{{imageURI}}</p>
+    <ion-item>
+      <button ion-button color="secondary" (click)="presentImageUploadSheet()">Get Image</button>
+    </ion-item>
+    
+    <p>{{videoId}}</p>
+    <ion-item class=”col”>
+      <button ion-button color=”secondary” (click)="presentActionSheet()">Browse Video</button>
+    </ion-item>
+
+    <ion-item>
+      <h4>Image Preview</h4>
+      <img src="{{imageFileName}}" alt="Ionic File1" width="300" />
+      <img src="{{imageFileName1}}" alt="Ionic File2" width="300" />
+      <img src="{{imageFileName2}}" alt="Ionic File3" width="300" />
+    </ion-item>
+    
+    <ion-item>
+      <button ion-button (click)="uploadFile()">Upload</button>
+      <button ion-button (click)="uploadVideo()">Upload Video</button>
+    </ion-item>
+  
+  </ion-card> -->
+
+</ion-content>

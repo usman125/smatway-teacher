@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="presentProfileModal()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- <ion-title>{{Performance & Profile}}</ion-title> -->
+    <ion-title>{{selectedStudent?.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="common-bg">
+    <!--     <ion-card>
+      <button class="Profilebtn" block ion-button (click)="presentProfileModal()">{{selectedStudent?.name}} Profile</button>
+    </ion-card> -->
+        <!-- <div class="header-title-alt text-primary">performance</div> -->
+<!--   <ion-card>
+    <ion-row>
+      <ion-col col=12 class="box-performance">
+        <form [formGroup]='performanceForm' (ngSubmit)="submitPeformance(performanceForm.value)">
+          <div class="rating-box">
+            <span id="name">Response
+              <strong class="pull-right m-rt-15">{{performanceForm.controls['response'].value || 0}}</strong>
+            </span>
+            <span id="rating">
+              <ion-range min="0" max="5" snaps="true" formControlName="response" color="light">
+                <ion-icon range-left name='star-outline'></ion-icon>
+                <ion-icon range-right name='star'></ion-icon>
+              </ion-range>
+            </span>
+          </div>
+          <div class="rating-box">
+            <span id="name">Reading
+              <strong class="pull-right m-rt-15">{{performanceForm.controls['reading'].value || 0}}</strong>
+            </span>
+            <span id="rating">
+              <ion-range min="0" max="5" snaps="true" formControlName="reading" color="light">
+                <ion-icon range-left name='star-outline'></ion-icon>
+                <ion-icon range-right name='star'></ion-icon>
+              </ion-range>
+            </span>
+          </div>
+          <div class="rating-box">
+            <span id="name">Writing
+              <strong class="pull-right m-rt-15">{{performanceForm.controls['writing'].value || 0}}</strong>
+            </span>
+            <span id="rating">
+              <ion-range min="0" max="5" snaps="true" formControlName="writing" color="light">
+                <ion-icon range-left name='star-outline'></ion-icon>
+                <ion-icon range-right name='star'></ion-icon>
+              </ion-range>
+            </span>
+          </div>
+          <div class="rating-box">
+            <span id="name">Listening
+              <strong class="pull-right m-rt-15">{{performanceForm.controls['listening'].value || 0}}</strong>
+            </span>
+            <span id="rating">
+              <ion-range min="0" max="5" snaps="true" formControlName="listening" color="light">
+                <ion-icon range-left name='star-outline'></ion-icon>
+                <ion-icon range-right name='star'></ion-icon>
+              </ion-range>
+            </span>
+          </div>
+          <div class="rating-box">
+            <span id="name">Speaking
+              <strong class="pull-right m-rt-15">{{performanceForm.controls['speaking'].value || 0}}</strong>
+            </span>
+            <span id="rating">
+              <ion-range min="0" max="5" snaps="true" formControlName="speaking" color="light">
+                <ion-icon range-left name='star-outline'></ion-icon>
+                <ion-icon range-right name='star'></ion-icon>
+              </ion-range>
+            </span>
+          </div>
+          <button ion-button block type="submit" color="secondary" tappable>Save</button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-card> -->
+  <div class="box-performance-new">
+    <form [formGroup]='performanceForm' (ngSubmit)="submitPeformance(performanceForm.value)">
+      <div class="rating-box">
+        <span id="name">Response
+          <!-- <strong class="pull-right m-rt-15">{{performanceForm.controls['response'].value || 0}}</strong> -->
+        </span>
+        <rating formControlName="response" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false"></rating>
+      </div>
+      <div class="rating-box">
+        <span id="name">Reading
+          <!-- <strong class="pull-right m-rt-15">{{performanceForm.controls['reading'].value || 0}}</strong> -->
+        </span>
+        <rating formControlName="reading" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false"></rating>
+      </div>
+      <div class="rating-box">
+        <span id="name">Writing
+          <!-- <strong class="pull-right m-rt-15">{{performanceForm.controls['writing'].value || 0}}</strong> -->
+        </span>
+        <rating formControlName="writing" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false"></rating>
+      </div>
+      <div class="rating-box">
+        <span id="name">Listening
+          <!-- <strong class="pull-right m-rt-15">{{performanceForm.controls['listening'].value || 0}}</strong> -->
+        </span>
+        <rating formControlName="listening" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false"></rating>
+      </div>
+      <div class="rating-box">
+        <span id="name">Speaking
+          <!-- <strong class="pull-right m-rt-15">{{performanceForm.controls['speaking'].value || 0}}</strong> -->
+        </span>
+        <rating formControlName="speaking" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false"></rating>
+      </div>
+      <button ion-button block type="submit" class="m-t-15" color="secondary" tappable>Save</button>
+    </form>
+  </div>
+</ion-content>

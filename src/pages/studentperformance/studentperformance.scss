@@ -1,0 +1,134 @@
+student-performance,
+.common-bg{
+  .info-box{
+    padding: 10px;
+    .box {
+      width: 94%;
+      margin: 8px;
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      span {
+        padding: 5px; 
+        width: 46.5%;
+        line-height: 16px;
+      }
+      span#name {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+      }
+    }
+    .box:last-child{
+      border-bottom: none;
+    }
+  }
+
+
+  .header-title-alt{
+    font-size: 15px;
+    text-transform: uppercase; 
+    text-align: left;
+    word-spacing: 2px;
+    font-weight: 600;
+    padding: 10px;
+  }
+  .Profilebtn{
+    margin: 0px;
+  }
+
+  .box-performance{
+    padding: 10px;
+    .rating-box{
+      width: 100%;
+      // display: flex;
+      margin: 0px 8px;
+      padding: 4px;
+      span#name{
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        strong {
+          border: 1px solid;
+          border-radius: 25%;
+          width: 19px;
+          height: 19px;
+          padding: 2px 4.5px;
+          background: #75C4FD;
+          color: #fff;
+        }
+      }
+      span#rating{
+        width: 100%;
+      }
+    }
+  }
+
+
+
+  ul {
+    padding: 0px;
+    margin: 10px;
+    &.rating li {
+      padding: 5px 10px !important;
+      background: none;
+      color: #75C4FD;
+
+      ion-icon {
+        font-size: 25px;
+      }
+    }
+  }
+
+  // .rating-box span {
+  //     display: flex;
+  //     width: 20%;
+  //     margin:18px 5px 10px 0px;
+  // }
+
+  .rating-box rating {
+      width: 80%;
+      display: inline-block;
+  }
+
+  .rating-box rating ul {
+      margin: 10px;
+  }
+
+  // .rating-box rating ul li {
+  //     padding: 5px 10px !important;
+  // }
+}
+
+.box-performance-new{
+  padding-top: 15px;
+  .rating-box{
+    width: 100%;
+    display: flex;
+    margin: 0px 0px;
+    padding: 4px;
+    span {
+      width: 25%;
+      margin:8px 5px 10px 0px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    rating {
+      width: 75%;
+      ul {
+        padding: 0px;
+        margin: 0px;
+        &.rating li {
+          padding: 5px 10px !important;
+          background: none;
+          color: #75C4FD;
+
+          ion-icon {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}

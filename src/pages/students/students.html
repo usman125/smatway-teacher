@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Students</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="common-bg">
+<!--   <ion-card (click)="getStudent(student)" tappable class="full-width" no-margin margin-bottom *ngFor="let student of allStudents">
+    <ion-card-content>
+      <ion-item>
+        <ion-row>
+          <ion-col col-3>
+            <div class="user-avatar" *ngIf="student?.imageUrl">
+              <img src="{{student?.imageUrl}}">
+            </div>
+            <div class="user-dummy" *ngIf="!student?.imageUrl">
+              <ion-icon name='contact'></ion-icon>
+            </div>
+          </ion-col> 
+          <ion-col col-9>
+            <div class="user-title text-secondary">
+              <span>{{student?.name}}</span>
+            </div>
+            <div class="user-info">
+              <ion-icon class="text-primary" name='pricetag'></ion-icon><span>{{student?.schoolIdentityNo}}</span>
+            </div>
+            <div class="user-info">
+              <ion-icon class="text-primary" name='calendar'></ion-icon><span>{{student?.registrationDate | date:'fullDate'}}</span>
+            </div>
+          </ion-col> 
+        </ion-row>
+      </ion-item>
+    </ion-card-content>
+  </ion-card> -->
+  <ion-card class="full-width mycard" no-margin margin-bottom>
+    <ion-row>
+      <div *ngFor="let student of allSortedStudents; let i=index;" class="student-box"  tappable>
+        <div class="m-b-15 m-t-15 m-lt-10 text-primary"><b>{{student.alphabet}}</b></div>
+        <ion-col col-4>
+          <div *ngFor="let item of student.students;" (click)="item.isPresent ? getStudent(item) : getNoItem(item)">
+            <div class="user-avatar" *ngIf="item?.imageUrl">
+              <img src="{{item?.imageUrl}}">
+              <div id="attend-flag" [className]="item.isPresent ? 'present' : 'absent'"></div>
+            </div>
+            <div class="user-dummy" *ngIf="!item?.imageUrl">
+              <ion-icon name='contact'></ion-icon>
+              <div id="attend-flag" [className]="item.isPresent ? 'present' : 'absent'"></div>
+            </div>
+            <span>{{item?.name}}</span>
+          </div>
+        </ion-col>
+      </div> 
+    </ion-row>
+  </ion-card>
+
+</ion-content>

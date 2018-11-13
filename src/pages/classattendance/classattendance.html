@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Class Attendance</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="common-bg">
+  <ion-card>
+    <ion-list *ngIf="allStudents">
+      <ion-list-header>
+        <h2 class="header-title">Students</h2>
+      </ion-list-header>
+      <div class="notes" padding *ngIf="disableBtn">
+        <small>*Today's Atendance marked!!</small>
+      </div>
+      <ion-item *ngFor="let student of allStudents;">
+        <ion-label>{{student?.name}}</ion-label>
+        <ion-toggle value="foo" [(ngModel)]="student.isPresent" disabled="{{student.disabled}}" checked="{{student.isPresent}}"></ion-toggle>
+      </ion-item>
+      <button [disabled]="disableBtn" padding ion-button block color="secondary" (click)="submitAttendance()" tappable>Submit</button>
+    </ion-list>
+  </ion-card>
+</ion-content>

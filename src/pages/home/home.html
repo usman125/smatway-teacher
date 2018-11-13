@@ -1,0 +1,126 @@
+<!-- <ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{selectedClass?.name}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> -->
+
+<!-- <ion-content padding class="animated fadeIn common-bg"> -->
+
+<!--   <ion-card (click)="goToStudents()" tappable>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" name='school'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">Students</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Recorded <br> <p id="box-number">{{classStudents?.length}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+  <ion-card (click)="goToClassAttendance()" tappable>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" name='clock'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">Class attendance</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Present <br> <p id="box-number">{{presentCount}}</p> </span>
+            <span class="text-primary">Absent <br> <p id="box-number">{{absentCount}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="notes">
+        <small>*Today's Count</small>
+      </div>
+
+    </ion-item>
+  </ion-card>
+
+  <ion-card (click)="goToAssignments()" tappable>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" ios="ios-folder" md="md-folder"></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">Assignments</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Recorded <br> <p id="box-number">{{assignmentsCount}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+
+  <ion-card (click)="goToPlanner()" tappable>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" name='calendar'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">Planner</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Events <br> <p id="box-number">250</p> </span>
+            <span class="text-primary">Classes <br> <p id="box-number">250</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+  <ion-card (click)="goToTeacherAttendance()" tappable>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon class="home-icon text-secondary" name='clock'></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+          <span class="header-title text-secondary">my attendance</span>
+          <br>
+          <div class="stats">
+            <span class="text-primary">Present <br> <p id="box-number">{{presentTeacherCount}}</p> </span>
+            <span class="text-primary">Absent <br> <p id="box-number">{{absentTeacherCount}}</p></span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="notes">
+        <small>*This Month's Count</small>
+      </div>
+    </ion-item>
+  </ion-card> -->
+
+  <ion-tabs>
+    <ion-tab tabIcon="people" tabTitle="Students" [rootParams]="rootParams" [root]="tab1"></ion-tab>
+    <ion-tab tabIcon="folder" tabTitle="Assignments" [rootParams]="rootParams" [root]="tab2"></ion-tab>
+    <ion-tab tabIcon="cloud-upload" tabTitle="Class Activity" [rootParams]="rootParams" [root]="tab3"></ion-tab>
+    <!-- <ion-tab tabIcon="clock" tabTitle="My Attendance" [root]="tab3"></ion-tab> -->
+    <!-- <ion-tab tabIcon="calendar" tabTitle="Planner" [root]="tab4"></ion-tab> -->
+    <!-- <ion-tab tabIcon="clock" tabTitle="Class Attendance" [rootParams]="rootParams" [root]="tab5"></ion-tab> -->
+    <!-- <ion-tab  *ngIf="toggleTabs" tabIcon="clock" tabTitle="Attendance"></ion-tab> -->
+  </ion-tabs>
+
+<!-- </ion-content> -->
+

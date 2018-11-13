@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mark Assignment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="common-bg">
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <div class="header-title">
+          <span>{{selectedAssignment?.title}}</span>
+        </div>
+        <div class="datenote m-t-10">
+          <ion-note item-end>
+            <span>{{selectedAssignment?.submissionDate | date:'fullDate'}}</span>
+          </ion-note>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col col=12 class="box-performance" *ngIf="!markedFlag">
+        <div class="header-title-alt">Students</div>
+          <div *ngFor="let student of allStudents">
+            <div class="rating-box">
+              <span id="name">
+                {{student.name}} 
+                <strong class="m-rt-15 pull-right">{{student.marks || 0}}</strong>
+              </span>
+              <span id="rating">  
+                <ion-range min="0" max="5" snaps="true" name="response" [(ngModel)]="student.marks" color="light">
+                  <ion-icon range-left name='star-outline'></ion-icon>
+                  <ion-icon range-right name='star'></ion-icon>
+                </ion-range>
+              </span>
+            </div>
+          </div>
+          <button ion-button block (click)="submitMarks()" color="secondary" tappable>Submit</button>
+        </ion-col>
+
+        <ion-col col=12 class="box-performance" *ngIf="markedFlag">
+          <div *ngFor="let student of allStudents">
+            <div class="rating-box">
+              <span id="name">
+                {{student.studentName}}
+                <strong class="m-rt-15 pull-right">{{student.marks || 0}}</strong>
+              </span> 
+              <span id="rating">  
+                <ion-range min="0" max="5" name="response" snaps="true" [(ngModel)]="student.marks" color="light">
+                  <ion-icon range-left name='star-outline'></ion-icon>
+                  <ion-icon range-right name='star'></ion-icon>
+                </ion-range>
+              </span>
+            </div>
+          </div>
+          <button ion-button block (click)="submitMarks()" color="secondary" tappable>Submit</button>
+        </ion-col>
+
+    </ion-row>
+  </ion-card>
+
+</ion-content>

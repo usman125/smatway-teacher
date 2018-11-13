@@ -1,0 +1,51 @@
+<ion-menu side="left" id="authenticated" [content]="content">
+  <ion-header>
+    <ion-toolbar class="user-profile">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="menuimage" col-12>
+              <div class="user-image">
+                <img *ngIf="!loggedUser?.teacher.imageUrl" src="assets/img/avatar.jpeg">
+                <img *ngIf="loggedUser?.teacher.imageUrl" src="{{loggedUser?.teacher.imageUrl}}">
+              </div>
+          </ion-col>
+          <ion-col padding-top col-12>
+            <h4 ion-text class="no-margin menuname text-white">
+              {{loggedUser?.username}}
+            </h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content color="primary">
+
+    <ion-list class="user-list">
+      <!-- <button *ngIf="selectedClassName" [disabled]="true" ion-item menuClose class="text-1x" (click)="logout()"> -->
+        <!-- <ion-icon item-left color="primary" name="log-out"></ion-icon> -->
+      <!-- </button> -->
+
+<!--       <button ion-item menuClose class="text-1x" (click)="goToDashboard()" *ngIf="selectedClass">
+        <ion-icon item-left name="filing" color="primary"></ion-icon>
+        <span ion-text color="">{{"Dashboard" | uppercase}}</span>
+        <ion-note style="margin-left: : 10px;"><br>{{selectedClassName}}</ion-note>
+      </button> -->
+      <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
+        <ion-icon item-left [name]="menuItem.icon" color="primary"></ion-icon>
+        <span ion-text color="">{{menuItem.title | uppercase}}</span>
+        <ion-note style="margin-left: : 10px;" *ngIf="menuItem.title === 'Select Class' && selectedClassName"><br>{{selectedClassName}}</ion-note>
+      </button>
+
+      <button ion-item menuClose class="text-1x" (click)="logout()">
+        <ion-icon item-left color="primary" name="log-out"></ion-icon>
+        <span ion-text color="">{{"log out" | uppercase}}</span>
+      </button>
+    </ion-list>
+    <!-- <span style="text-align: left;margin: 20px;display: block;padding-top: 25px;" ion-text *ngIf="selectedClassName" color="primary"><strong style="margin-bottom: 5px;display: inline-block;">Selected Class</strong> <br> {{selectedClassName}}</span> -->
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
