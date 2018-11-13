@@ -81,16 +81,16 @@ export class TeacherAttendance {
   // }
 
 
-  getEventClass(events) {
-    return 'test' + events.length;
-    for (let obj of this.allAttendances){
-      var date = moment(obj.dateCreated)
-      var day = date.format('M')
-    }
-  }
-  getEventId(days) {
-    console.log("DAYS AND EVENTS:--", days)
-  }
+  // getEventClass(events) {
+  //   return 'test' + events.length;
+  //   for (let obj of this.allAttendances){
+  //     var date = moment(obj.dateCreated)
+  //     var day = date.format('M')
+  //   }
+  // }
+  // getEventId(days) {
+  //   console.log("DAYS AND EVENTS:--", days)
+  // }
 
   
   getTeacherMonthAttendance(teacherId, month, year){
