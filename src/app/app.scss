@@ -1,7 +1,48 @@
 // http://ionicframework.com/docs/theming/
 // App Shared Imports
 // --------------------------------------------------
+.single-msg {
+  margin: 8px 8px 0px 0px;
+  border-radius: 50% !important;
+  color: #fff;
+  display: inline-block;
+  .sender {
+    background: #e35;
+    padding: 15px;
+    display: inline-block;
+    float: right;
+    .msg-date{
+      font-size: 11px;
+      margin-top: 4px;
+    }
+  }
+  .receiver {
+    background: #B33939;
+    padding: 15px;
+    display: inline-block;
+    float: left;
+    .msg-date{
+      font-size: 11px;
+      margin-top: 4px;
+    }
 
+  }
+
+}
+
+.chat-box{
+  ion-col{
+    text-align: left;
+  }
+  .chat-info{
+    padding:20px;
+    span{
+      padding:0px;
+      margin:0px 0px 5px;
+      display: block; 
+    }
+  }
+}
 
 .menuimage {
   .user-image{
@@ -244,6 +285,16 @@
 .text-2x {
   font-size: 2em;
 }
+
+.text-3x {
+  font-size: 3em;
+}
+
+.text-4x {
+  font-size: 4em;
+}
+
+
 
 .text-1x {
   font-size: 1em;

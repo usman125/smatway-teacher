@@ -13,6 +13,9 @@ import { Storage } from '@ionic/storage';
 import {Planner} from '../pages/planner/planner';
 import {TeacherAttendance} from "../pages/teacherattendance/teacherattendance";
 import {ClassDashboard} from "../pages/classdashboard/classdashboard";
+import {ClassActivity} from "../pages/classactivity/classactivity";
+import {Assignments} from "../pages/assignments/assignments";
+import {Inbox} from "../pages/inbox/inbox";
 
 export interface MenuItem {
     title: string;
@@ -39,40 +42,38 @@ export class MyApp {
     public statusBar: StatusBar,
     public Events: Events,
     public _storage: Storage,
-    public keyboard: Keyboard
-  ) {
-        //*** Control Status Bar
-        this.appMenuItems = [
-          // {title: 'Home', component: HomePage, icon: 'home'},
-          {title: 'Account', component: LocalWeatherPage, icon: 'contact'}
-        ];
-        Events.subscribe('user:created', (user, time) => {
-          // user and time are the same arguments passed in `events.publish(user, time)`
-          console.log('Welcome', user, 'at', time);
-          this.loggedUser = user
-          if (this.appMenuItems.length < 4){
-            this.appMenuItems.push({title: 'Select Class', component: SelectClass, icon: 'people'})
-            this.appMenuItems.push({title: 'Planner', component: Planner, icon: 'calendar'})
-            this.appMenuItems.push({title: 'My Attendance', component: TeacherAttendance, icon: 'clock'})
-          }
-        });
-        Events.subscribe('class:selected', (cliceked) => {
-          console.log('USER CLICK FORM STIDENTS:*********\n', cliceked);
-          this.selectedClass = cliceked
-          if (cliceked){
-            this.selectedClassName = cliceked.name
-          }
-        });
-        this.initializeApp();
-
-
+    public keyboard: Keyboard) {
+    //*** Control Status Bar
+    this.appMenuItems = [
+      {title: 'Account', component: LocalWeatherPage, icon: 'contact'}
+    ];
+    Events.subscribe('user:created', (user, time) => {
+      console.log('Welcome', user, 'at', time);
+      this.loggedUser = user
+      if (this.appMenuItems.length < 5){
+        this.appMenuItems.push({title: 'Select Class', component: SelectClass, icon: 'people'})
+        this.appMenuItems.push({title: 'Planner', component: Planner, icon: 'calendar'})
+        this.appMenuItems.push({title: 'My Attendance', component: TeacherAttendance, icon: 'clock'})
+        this.appMenuItems.push({title: 'Inbox', component: Inbox, icon: 'mail-open'})
+      }
+    });
+    Events.subscribe('class:selected', (cliceked) => {
+      console.log('USER CLICK FORM STIDENTS:*********\n', cliceked);
+      this.selectedClass = cliceked
+      if (cliceked){
+        this.selectedClassName = cliceked.name
+      }else{
+        this.selectedClassName = null
+      }
+    });
+    this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
-        this.statusBar.styleDefault();
-        this.statusBar.overlaysWebView(false);
+      this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(false);
         // this.getUser()
       //*** Control Splash Screen
       // this.splashScreen.show();
@@ -84,12 +85,23 @@ export class MyApp {
     });
   }
 
+
+  goToActvities(){
+    this.nav.push(ClassActivity, {'classObject': this.selectedClass})
+  }
+
+  goToAssignments(){
+    this.nav.push(Assignments, {'classObject': this.selectedClass})
+  }
+
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     if (page.title == 'Planner'){
       this.nav.push(page.component);
     }else if (page.title == 'My Attendance'){
+      this.nav.push(page.component);
+    }else if (page.title == 'Inbox'){
       this.nav.push(page.component);
     }
     else{

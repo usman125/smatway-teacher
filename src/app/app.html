@@ -38,10 +38,19 @@
         <ion-note style="margin-left: : 10px;" *ngIf="menuItem.title === 'Select Class' && selectedClassName"><br>{{selectedClassName}}</ion-note>
       </button>
 
+      <button ion-item menuClose class="text-1x" (click)="goToActvities()" *ngIf="selectedClassName">
+        <ion-icon item-left color="primary" name="camera"></ion-icon>
+        <span ion-text color="">{{"activitis" | uppercase}}</span>
+      </button>
+      <button ion-item menuClose class="text-1x" (click)="goToAssignments()" *ngIf="selectedClassName">
+        <ion-icon item-left color="primary" name="folder"></ion-icon>
+        <span ion-text color="">{{"assignments" | uppercase}}</span>
+      </button>
       <button ion-item menuClose class="text-1x" (click)="logout()">
         <ion-icon item-left color="primary" name="log-out"></ion-icon>
         <span ion-text color="">{{"log out" | uppercase}}</span>
       </button>
+
     </ion-list>
     <!-- <span style="text-align: left;margin: 20px;display: block;padding-top: 25px;" ion-text *ngIf="selectedClassName" color="primary"><strong style="margin-bottom: 5px;display: inline-block;">Selected Class</strong> <br> {{selectedClassName}}</span> -->
   </ion-content>

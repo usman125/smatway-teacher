@@ -47,7 +47,7 @@ export class ClassAttendance {
       console.log("LOCAL STORAGE FROM CLASS ATTENDANCE:---\n", this.loggedUser,
                   // "\nSTUDENTS FROM CLASS ATTENDANCE PARAMS:---\n", this.allStudents,
                   "\nCLASS ID:---\n", this.classId)
-      this.Events.publish('class:selected', this.navParams.get('classObject').name);
+      this.Events.publish('class:selected', this.navParams.get('classObject'));
       this.getAttendanceByDate(created_at)
     })
   }

@@ -66,7 +66,8 @@ export class ClassDashboard {
               public nav: NavController, 
               public Events: Events, 
               public popoverCtrl: PopoverController) {
-    this.selectedClass = this.navParams.get('classObject')
+    // this.selectedClass = this.navParams.get('classObject')
+    this.selectedClass = this.navParams.data.classId
   }
 
   ionViewWillEnter() {

@@ -27,7 +27,10 @@ export class ClassActivity {
     public loadingController: LoadingController,
     public streamingMedia: StreamingMedia, 
     private storage: Storage) {
-    this.selectedClass = navParams.data.classId
+    if (navParams.data.classId)
+      this.selectedClass = navParams.data.classId
+    else
+      this.selectedClass = navParams.get('classObject')
   }
 
   ionViewWillEnter() {

@@ -26,7 +26,10 @@ export class Assignments {
     public modalCtrl: ModalController,
     public _assignmentsService: AssignmentsService,
     private storage: Storage) {
+    if (navParams.data.classId)
       this.classId = navParams.data.classId.id
+    else
+      this.classId = navParams.get('classObject').id
   }
 
   ionViewWillEnter() {

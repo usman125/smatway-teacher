@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Chat Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="common-bg">
+  <div class="full-width single-msg" *ngFor="let msg of selectedChat?.messages">
+    <div className="{{loggedUser.id == msg.senderId ? 'sender' : 'receiver'}}">
+      <!-- <ion-icon name="contact"></ion-icon> -->
+      <div class="msg">{{msg.message}}</div>
+      <div class="msg-date"><ion-note>{{msg.date}}</ion-note></div>
+    </div>
+  </div>
+  <div class="full-width single-msg">
+    <div className="{{'receiver'}}">
+      <!-- <ion-icon name="contact"></ion-icon> -->
+      <div class="msg">{{"jhjkhjkh jkhkjhjk uiyiug jhgjhg"}}</div>
+      <div class="msg-date"><ion-note>{{"2 days ago"}}</ion-note></div>
+    </div>
+  </div>
+  <div class="full-width single-msg">
+    <div className="{{'receiver'}}">
+      <!-- <ion-icon name="contact"></ion-icon> -->
+      <div class="msg">{{"jhjkhjkh jkhkjhjk uiyiug jhgjhg"}}</div>
+      <div class="msg-date"><ion-note>{{"2 days ago"}}</ion-note></div>
+    </div>
+  </div>
+
+</ion-content>

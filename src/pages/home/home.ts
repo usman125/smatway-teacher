@@ -17,6 +17,7 @@ import {ClassAttendanceService} from '../../services/classattendance.service';
 import {AssignmentsService} from '../../services/assignment.service';
 import {Assignments} from '../assignments/assignments';
 import {Planner} from '../planner/planner';
+import {ClassDashboard} from "../classdashboard/classdashboard";
 
 @Component({
   selector: 'page-home',
@@ -71,15 +72,15 @@ export class HomePage {
               public nav: NavController, 
               public Events: Events, 
               public popoverCtrl: PopoverController) {
-    this.tab1 = Students
-    this.tab2 = Assignments
-    this.tab3 = ClassActivity
-    // this.tab4 = Planner
-    // this.tab5 = ClassAttendance
     this.selectedClass = this.navParams.get('classObject')
     this.attendeStudents = this.navParams.get('attendeStudents')
     this.rootParams.classId = this.selectedClass
     this.rootParams.attendeStudents = this.attendeStudents
+    this.tab1 = Students
+    this.tab2 = Assignments
+    this.tab3 = ClassActivity
+    // this.tab4 = Planner
+    this.tab5 = ClassDashboard
   }
 
   ionViewWillEnter() {

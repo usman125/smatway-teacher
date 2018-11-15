@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="presentSendMessageModal()">
+        <ion-icon name="chatbubbles"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- <ion-title>{{Performance & Profile}}</ion-title> -->
+    <ion-title>Inbox</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="common-bg">
+  
+  <ion-card *ngIf="!allChats?.length">
+    <ion-item>
+      <div class="text-sm">
+        <span>{{"no data found" | uppercase}}</span>
+      </div>
+    </ion-item>
+  </ion-card>
+  
+  <ion-card *ngFor="let chat of allChats" (click)="singleChat(chat)" tappable>
+    <ion-row class="chat-box">
+      <ion-col col-3>
+        <ion-icon name='contact' class="text-4x padding-xs"></ion-icon>
+      </ion-col>
+      <ion-col col-9 class="chat-info">
+        <span class="padding-xs">{{chat.messages[0].message}}</span>
+        <span class="padding-xs">\<ion-note>{{chat.date}}</ion-note></span>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+  </ion-card>
+</ion-content>

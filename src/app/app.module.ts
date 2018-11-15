@@ -39,6 +39,8 @@ import {ClassActivity} from "../pages/classactivity/classactivity";
 import {AddClassActivity} from "../pages/addclassactivity/addclassactivity";
 import {StudentAssignments} from "../pages/studentassignment/studentassignment";
 import {Planner, EventDetail} from "../pages/planner/planner";
+import {Inbox, SendMessage} from "../pages/inbox/inbox";
+import {SingleChat} from "../pages/singlechat/singlechat";
 import {ClassDashboard} from "../pages/classdashboard/classdashboard";
 import {HttpModule} from '@angular/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -94,6 +96,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ClassActivity,
     AddClassActivity,
     ClassDashboard,
+    Inbox,
+    SendMessage,
+    SingleChat,
   ],
   imports: [
     BrowserModule,
@@ -144,7 +149,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ClassActivity,
     AddClassActivity,
     ClassDashboard,
-
+    Inbox,
+    SendMessage,
+    SingleChat,
   ],
   providers: [
     StatusBar,
