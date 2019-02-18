@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "74282154919",
+    "firebase_url": "https://smatway-teacher.firebaseio.com",
+    "project_id": "smatway-teacher",
+    "storage_bucket": "smatway-teacher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74282154919:android:25b64e33cf50f4e7",
+        "android_client_info": {
+          "package_name": "com.smatway.teacherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74282154919-omaq4nr5f2e1ug49rfoj3ihs0bb95hmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTpw8uWsYkZ4tyTerwe_lz2EL_lfpjSzA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

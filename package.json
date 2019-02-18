@@ -61,7 +61,7 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.0.1",
+    "@ionic/app-scripts": "^3.2.2",
     "@ionic/lab": "1.0.12",
     "@types/lodash": "^4.14.117",
     "ionic": "3.19.0",

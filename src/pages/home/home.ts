@@ -72,6 +72,7 @@ export class HomePage {
               public nav: NavController, 
               public Events: Events, 
               public popoverCtrl: PopoverController) {
+    // if (navParams.data.)
     this.selectedClass = this.navParams.get('classObject')
     this.attendeStudents = this.navParams.get('attendeStudents')
     this.rootParams.classId = this.selectedClass
@@ -85,7 +86,7 @@ export class HomePage {
 
   ionViewWillEnter() {
     let created_at = this.getDate()
-    this.presentLoading()
+    // this.presentLoading()
     this.storage.get('user').then((val) => {
       this.loggedUser = JSON.parse(val)
       this._studentsService.allStudentsByClassId(this.selectedClass.id)
@@ -99,7 +100,9 @@ export class HomePage {
         // this.getClassAttendanceByDate(created_at)
         // this.getTeacherMonthAttendance(this.loggedUser.teacher.id, this.getMonth(), this.getYear())
         // this.getClassAssignments(this.selectedClass.id)
-        this.loader.dismissAll()
+        // this.loader.dismissAll()
+        this.nav.setRoot(Students, {'classObject': this.selectedClass,
+                                    'attendeStudents': this.attendeStudents})
       })
     }).catch((err) => {
       console.log(err)

@@ -18,6 +18,7 @@ export class ClassAttendance {
   loggedUser: any = null
   classId: any = null
   todayAttendance: any = null
+  selectedClass: any = null
   attendeStudents: any = []
 
   disableBtn: boolean = false
@@ -35,6 +36,7 @@ export class ClassAttendance {
         this.classId = this.navParams.data.classId.id
       }else{
         this.classId = this.navParams.get('classObject').id
+        this.selectedClass = this.navParams.get('classObject')
       }
   }
 
@@ -47,7 +49,6 @@ export class ClassAttendance {
       console.log("LOCAL STORAGE FROM CLASS ATTENDANCE:---\n", this.loggedUser,
                   // "\nSTUDENTS FROM CLASS ATTENDANCE PARAMS:---\n", this.allStudents,
                   "\nCLASS ID:---\n", this.classId)
-      this.Events.publish('class:selected', this.navParams.get('classObject'));
       this.getAttendanceByDate(created_at)
     })
   }
@@ -84,6 +85,7 @@ export class ClassAttendance {
             }
           }
           this.disableBtn = false
+          this.Events.publish('class:noattend', this.selectedClass, true);
         })
       }else{
         var attendances = result.attendance
@@ -97,6 +99,8 @@ export class ClassAttendance {
           {'attendeStudents': this.attendeStudents, 
            'classObject': this.navParams.get('classObject')
           })
+        this.Events.publish('class:selected', this.selectedClass);
+        this.Events.publish('class:home', this.selectedClass, this.attendeStudents);
       }
     })
   }

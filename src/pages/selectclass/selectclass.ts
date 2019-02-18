@@ -37,6 +37,7 @@ export class SelectClass {
         console.log("ALL CLASSES OF TEACHER:---", this.allClasses)  
         this.loader.dismissAll()
         this.Events.publish('class:selected', null);
+        this.Events.publish('class:noattend', null, false);
       })
     })
   }

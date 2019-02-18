@@ -40,6 +40,17 @@ export class LoginPage {
     })
   }
 
+  ionViewWillEnter(){
+    this._storage.get('user').then(val => {
+      if (val){
+        this.nav.setRoot(SelectClass)
+        this.Events.publish('user:created', JSON.parse(val), Date.now());
+      }else{
+        console.log("------:NO PREVIOUS USER:-----")
+      }
+    })
+  }
+
   // go to register page
   register() {
     this.nav.setRoot(RegisterPage);

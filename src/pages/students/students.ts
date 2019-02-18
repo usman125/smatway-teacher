@@ -26,11 +26,12 @@ export class Students {
     public Events: Events,
     private storage: Storage) {
     // console.log("\nNAV PARAMS FROM TABS:---\n", navParams.data)
-    if (navParams.data){
+    if (navParams.data.classId){
       this.selectedClass = navParams.data.classId
       this.attendeStudents = navParams.data.attendeStudents
     }else{
-      this.selectedClass = navParams.get('classId')
+      this.selectedClass = navParams.get('classObject')
+      this.attendeStudents = navParams.get('attendeStudents')
     }
   }
 

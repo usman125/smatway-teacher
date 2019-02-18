@@ -36,6 +36,9 @@ export class MyApp {
   loggedUser: any = null
   selectedClassName: any = null
   selectedClass: any = null
+  attendeStudents: any = null
+  noAttend: any = null
+  noAttendName: any = null
 
   constructor(
     public platform: Platform,
@@ -62,8 +65,20 @@ export class MyApp {
       this.selectedClass = cliceked
       if (cliceked){
         this.selectedClassName = cliceked.name
+        Events.subscribe('class:home', (classSelected, homeStudents) => {
+          // this.selectedClass = classSelected
+          this.attendeStudents = homeStudents
+        })
       }else{
         this.selectedClassName = null
+        Events.subscribe('class:noattend', (tempClass, checkFlag) => {
+          // this.selectedClassName = tempClass.name
+          if (tempClass)
+            this.noAttendName = tempClass.name
+          else
+            this.noAttendName = null
+          this.noAttend = checkFlag
+        })
       }
     });
     this.initializeApp();
@@ -87,30 +102,34 @@ export class MyApp {
 
 
   goToActvities(){
-    this.nav.push(ClassActivity, {'classObject': this.selectedClass})
+    this.nav.setRoot(ClassActivity, {'classObject': this.selectedClass})
   }
 
   goToAssignments(){
-    this.nav.push(Assignments, {'classObject': this.selectedClass})
+    this.nav.setRoot(Assignments, {'classObject': this.selectedClass})
+  }
+
+  goToHome(){
+    this.nav.setRoot(HomePage, {'classObject': this.selectedClass, 'attendeStudents': this.attendeStudents})
   }
 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    if (page.title == 'Planner'){
-      this.nav.push(page.component);
-    }else if (page.title == 'My Attendance'){
-      this.nav.push(page.component);
-    }else if (page.title == 'Inbox'){
-      this.nav.push(page.component);
-    }
-    else{
+    // if (page.title == 'Planner'){
+    //   this.nav.push(page.component);
+    // }else if (page.title == 'My Attendance'){
+    //   this.nav.push(page.component);
+    // }else if (page.title == 'Inbox'){
+    //   this.nav.push(page.component);
+    // }
+    // else{
       this.nav.setRoot(page.component);
-    }
+    // }
   }
 
   goToDashboard(){
-    this.nav.push(ClassDashboard, {'classObject': this.selectedClass});
+    this.nav.setRoot(ClassDashboard, {'classObject': this.selectedClass});
   }
 
   logout() {

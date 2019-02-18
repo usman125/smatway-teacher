@@ -32,10 +32,27 @@
         <span ion-text color="">{{"Dashboard" | uppercase}}</span>
         <ion-note style="margin-left: : 10px;"><br>{{selectedClassName}}</ion-note>
       </button> -->
+      <button ion-item menuClose class="text-1x" (click)="goToHome()" *ngIf="selectedClassName">
+        <ion-icon item-left color="primary" name="school"></ion-icon>
+        <span ion-text color="">{{"students" | uppercase}}</span>
+      </button>
+      <button ion-item menuClose class="text-1x" (click)="goToDashboard()" *ngIf="selectedClassName">
+        <ion-icon item-left color="primary" name="filing"></ion-icon>
+        <span ion-text color="">{{"dashboard" | uppercase}}</span>
+      </button>
+
       <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon" color="primary"></ion-icon>
         <span ion-text color="">{{menuItem.title | uppercase}}</span>
-        <ion-note style="margin-left: : 10px;" *ngIf="menuItem.title === 'Select Class' && selectedClassName"><br>{{selectedClassName}}</ion-note>
+        <ion-note style="margin-left: : 10px;" *ngIf="menuItem.title === 'Select Class' && selectedClassName">
+        <br>
+        Current: {{selectedClassName}}
+        </ion-note>
+        <ion-note style="margin-left: : 10px;" *ngIf="menuItem.title === 'Select Class' && noAttendName">
+        <br>
+        Current: {{noAttendName}}
+        </ion-note>
+        
       </button>
 
       <button ion-item menuClose class="text-1x" (click)="goToActvities()" *ngIf="selectedClassName">

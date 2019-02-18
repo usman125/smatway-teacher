@@ -3,11 +3,16 @@
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Class Attendance</ion-title>
+    <ion-title>Attendance {{selectedClass?.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="common-bg">
+  <ion-card *ngIf="!allStudents">
+    <ion-item>
+      <strong class="text-sm">{{"no data found" | uppercase}}</strong>
+    </ion-item>
+  </ion-card>
   <ion-card>
     <ion-list *ngIf="allStudents">
       <ion-list-header>
